@@ -1,3 +1,5 @@
+let key = ''
+let cx = ''
 function injectUi() {
     document.body.innerHTML = `
       <h1>Custom Search JSON API</h1>
@@ -32,7 +34,7 @@ function injectUi() {
   
   function search(startIndex = 1){
     let query = document.getElementById("keyword").value
-     fetch(`https://www.googleapis.com/customsearch/v1/?key=&cx=&q=${query}&start=${startIndex}`)
+     fetch(`https://www.googleapis.com/customsearch/v1/?key=${key}&cx=${cx}&q=${query}&start=${startIndex}`)
       .then(res => res.json())
       .then(data => {
           json2csv(data)
