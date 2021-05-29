@@ -33,8 +33,7 @@ function download(){
 }
 
 function clean(){
-    let content = document.getElementById("content")
-    content.value = "時間,來源,標題,連結\r\n"
+    document.getElementById("content").value = "時間,來源,標題,連結\r\n"
     document.getElementById("keyword").value = ''
 }
 
