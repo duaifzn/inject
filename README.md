@@ -59,7 +59,7 @@ function injectUi() {
   
 ```
 ### 5. change key and cx
-### 6. Ctl + F10 run
+### 6. Ctrl + Enter run
 
 
 
