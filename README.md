@@ -19,8 +19,6 @@ function injectUi() {
     <div id="link"></div>
     `
     clean()
- 
-    
 }
 function json2csv(res){
   for(const item of res.items){
@@ -40,14 +38,14 @@ function download(){
 }
 
 function clean(){
-    let content = document.getElementById("content")
-    content.value = "時間,來源,標題,連結\r\n"
-    document.getElementById("keyword").value = ''
+  let content = document.getElementById("content")
+   content.innerHTML = "時間,來源,標題,連結\r\n"
+   document.getElementById("keyword").value = ''
 }
 
 function search(startIndex = 1){
   let query = document.getElementById("keyword").value
-   fetch(`https://www.googleapis.com/customsearch/v1/?key=${key}&cx=${cx}&q=${query}&start=${startIndex}`)
+   fetch(`https://www.googleapis.com/customsearch/v1/?key=${key}&cx=${cx}&q=${query}&start=${startIndex}&sort=date`)
     .then(res => res.json())
     .then(data => {
         json2csv(data)
@@ -61,6 +59,7 @@ function search(startIndex = 1){
 }
 
 injectUi();
+
 
 
 ```
